@@ -3,173 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Henry — UI/UX Designer & Frontend Developer</title>
+  <title>Henry — Frontend Developer</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .hero-bg { background: linear-gradient(135deg, #0a0a0a, #1a1a2e); }
+    body {
+      font-family: system-ui, sans-serif;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #0a0a0a, #111827);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      transition: 0.3s ease;
+    }
+
+    #cursor-glow {
+      width: 280px;
+      height: 280px;
+      background: rgba(16,185,129,0.15);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      filter: blur(80px);
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
   </style>
 </head>
+
 <body class="bg-zinc-950 text-zinc-200">
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800">
-    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <h2 class="text-2xl font-bold">Henry</h2>
-      <div class="flex gap-8 text-sm font-medium">
-        <a href="#work" class="hover:text-white transition">Work</a>
-        <a href="#about" class="hover:text-white transition">About</a>
-        <a href="#blog" class="hover:text-white transition">Blog</a>
-        <a href="#contact" class="hover:text-white transition">Contact</a>
-      </div>
+<div id="cursor-glow"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800">
+  <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+    <h2 class="text-2xl font-bold">Henry</h2>
+    <div class="flex gap-6 text-sm">
+      <a href="#work" class="hover:text-white">Work</a>
+      <a href="#skills" class="hover:text-white">Skills</a>
+      <a href="#about" class="hover:text-white">About</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Hero -->
-  <section class="hero-bg min-h-screen flex items-center pt-20">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="inline-flex items-center gap-2 bg-zinc-900 px-4 py-2 rounded-full text-sm mb-6">
-          <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-          Available for freelance work
-        </p>
-        
-        <h1 class="text-6xl md:text-7xl font-bold leading-tight mb-6">
-          Hi, I'm <span class="text-emerald-500">Henry</span>
-        </h1>
-        
-        <p class="text-2xl text-zinc-400 mb-10">
-          Freelance UI/UX Designer &amp; Frontend Developer based in Lagos.
-        </p>
-        
-        <div class="flex gap-4">
-          <a href="#contact" class="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:bg-emerald-500 hover:text-white transition">
-            Let's work together
-          </a>
-          <a href="#work" class="border border-zinc-700 px-8 py-4 rounded-2xl font-semibold hover:border-zinc-400 transition">
-            View my work
-          </a>
-        </div>
-      </div>
+<!-- HERO -->
+<section class="hero-bg min-h-screen flex items-center pt-20 reveal">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-      <div class="flex justify-center">
-        <!-- YOUR REAL PHOTO -->
-        <img src="https://i.postimg.cc/x1581Frv/1779112548241.jpg" 
-             alt="Henry" 
-             class="rounded-3xl shadow-2xl w-full max-w-md object-cover">
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="work" class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-4">Selected Work</h2>
-      <p class="text-zinc-400 mb-12">Here are some projects I've worked on recently.</p>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" 
-               class="w-full h-64 object-cover" alt="SaaS Analytics">
-          <div class="p-8">
-            <h3 class="text-2xl font-semibold mb-2">SaaS Analytics Platform</h3>
-            <p class="text-zinc-400 mb-4">Modern analytics dashboard with real-time charts and KPI tracking</p>
-            <a href="#" class="text-emerald-500 hover:underline">View Case Study →</a>
-          </div>
-        </div>
-
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80" 
-               class="w-full h-64 object-cover" alt="Fintech Mobile App">
-          <div class="p-8">
-            <h3 class="text-2xl font-semibold mb-2">Fintech Mobile App</h3>
-            <p class="text-zinc-400 mb-4">Seamless mobile banking and investment experience</p>
-            <a href="#" class="text-emerald-500 hover:underline">View Case Study →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="py-12 border-b border-zinc-800">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-3 gap-8 text-center">
-      <div><p class="text-5xl font-bold text-emerald-500">15+</p><p class="text-zinc-400">Projects Completed</p></div>
-      <div><p class="text-5xl font-bold text-emerald-500">10+</p><p class="text-zinc-400">Happy Clients</p></div>
-      <div><p class="text-5xl font-bold text-emerald-500">3y</p><p class="text-zinc-400">Experience</p></div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="py-20 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12">What I Do</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-zinc-800 p-8 rounded-3xl"><h3 class="text-2xl font-semibold mb-4">UI/UX Design</h3><p class="text-zinc-400">Wireframes, prototypes, and beautiful interfaces in Figma.</p></div>
-        <div class="bg-zinc-800 p-8 rounded-3xl"><h3 class="text-2xl font-semibold mb-4">Frontend Development</h3><p class="text-zinc-400">Clean, fast, responsive websites with HTML, CSS & JavaScript.</p></div>
-        <div class="bg-zinc-800 p-8 rounded-3xl"><h3 class="text-2xl font-semibold mb-4">Landing Pages</h3><p class="text-zinc-400">High-converting pages that look great and perform well.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12">Experience</h2>
-      <div class="space-y-8">
-        <div class="bg-zinc-900 p-8 rounded-3xl border border-zinc-800">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <div>
-              <h3 class="text-2xl font-semibold">Frontend Development Intern</h3>
-              <p class="text-emerald-500 font-medium">Mercuryx</p>
-            </div>
-            <span class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-500 px-4 py-1 rounded-full text-sm mt-2 md:mt-0 w-fit">
-              <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-              Present
-            </span>
-          </div>
-          <p class="text-zinc-400">Currently honing frontend development skills, working on real-world projects and collaborating with the team to build modern web applications.</p>
-        </div>
-
-        <div class="bg-zinc-900 p-8 rounded-3xl border border-zinc-800">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <div>
-              <h3 class="text-2xl font-semibold">Frontend Development & Backend Internship</h3>
-              <p class="text-emerald-500 font-medium">LEARN2EARN</p>
-            </div>
-            <span class="text-zinc-500 text-sm mt-2 md:mt-0">1 Month Program</span>
-          </div>
-          <p class="text-zinc-400">Completed frontend development training and undertook a backend internship. Gained hands-on experience with Go (Golang), RESTful APIs, database integration, and server-side architecture.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-20 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-8">A bit about me</h2>
-      <p class="max-w-2xl text-lg text-zinc-300">
-        I'm Henry, a passionate UI/UX Designer and Frontend Developer based in Lagos. I love creating clean, modern digital experiences.
+    <div>
+      <p class="inline-flex items-center gap-2 bg-zinc-900 px-4 py-2 rounded-full text-sm mb-6">
+        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+        Available for internships & freelance work
       </p>
-    </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-5xl font-bold mb-6">Let's work together</h2>
-      <p class="text-xl text-zinc-400 mb-10">I'm currently available for new projects.</p>
-      <a href="mailto:your@email.com" class="inline-block bg-emerald-500 text-black px-10 py-5 rounded-2xl text-xl font-semibold hover:bg-emerald-600 transition">
-        Send me a message
-      </a>
-    </div>
-  </section>
+      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+        I build clean, fast <br>
+        <span class="text-emerald-500">web experiences</span>
+      </h1>
 
-  <footer class="py-10 border-t border-zinc-800 text-center text-zinc-500">
-    © 2026 Henry. All rights reserved.
-  </footer>
+      <p class="text-zinc-400 text-lg mb-8 max-w-xl">
+        I'm Henry, a frontend developer in Lagos focused on building real-world applications,
+        learning backend systems with Go, and improving how users interact with the web.
+      </p>
+
+      <div class="flex gap-3 flex-wrap mb-8">
+        <span class="bg-zinc-900 px-4 py-2 rounded-full text-sm">JavaScript</span>
+        <span class="bg-zinc-900 px-4 py-2 rounded-full text-sm">Tailwind</span>
+        <span class="bg-zinc-900 px-4 py-2 rounded-full text-sm">Go (learning)</span>
+        <span class="bg-zinc-900 px-4 py-2 rounded-full text-sm">APIs</span>
+      </div>
+
+      <div class="flex gap-4">
+        <a href="#contact" class="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-emerald-500 hover:text-white">
+          Contact Me
+        </a>
+        <a href="#work" class="border border-zinc-700 px-6 py-3 rounded-xl hover:border-zinc-400">
+          View Journey
+        </a>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <img src="https://i.postimg.cc/x1581Frv/1779112548241.jpg"
+           class="rounded-3xl shadow-2xl max-w-md w-full" />
+    </div>
+
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="py-20 reveal">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-4xl font-bold mb-4">Projects</h2>
+    <p class="text-zinc-400 mb-10">
+      I’m currently building my portfolio projects. Real work coming soon.
+    </p>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-10 rounded-3xl">
+      <h3 class="text-2xl font-semibold mb-4">What I’m working on</h3>
+
+      <ul class="text-zinc-400 space-y-3">
+        <li>• JavaScript-based web applications</li>
+        <li>• Backend APIs using Go</li>
+        <li>• Real-world internship projects</li>
+        <li>• Improving system design fundamentals</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-20 bg-zinc-900 reveal">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-4xl font-bold mb-12">Skills</h2>
+
+    <div class="grid md:grid-cols-4 gap-6">
+
+      <div class="bg-zinc-800 p-6 rounded-2xl text-center card">HTML</div>
+      <div class="bg-zinc-800 p-6 rounded-2xl text-center card">CSS</div>
+      <div class="bg-zinc-800 p-6 rounded-2xl text-center card">JavaScript</div>
+      <div class="bg-zinc-800 p-6 rounded-2xl text-center card">Tailwind</div>
+      <div class="bg-zinc-800 p-6 rounded-2xl text-center card">Go</div>
+      <div class="bg-zinc-800 p-6 rounded-2xl text-center card">REST APIs</div>
+      <div class="bg-zinc-800 p-6 rounded-2xl text-center card">Git</div>
+      <div class="bg-zinc-800 p-6 rounded-2xl text-center card">Responsive UI</div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 reveal">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <h2 class="text-4xl font-bold mb-6">About me</h2>
+
+    <p class="text-zinc-300 leading-relaxed">
+      I'm Henry, a frontend developer based in Lagos who enjoys building clean,
+      responsive and functional web applications.
+      <br><br>
+      I’m currently improving my JavaScript skills, exploring backend development with Go,
+      and working on real-world projects through internships.
+      <br><br>
+      My goal is to become a software engineer who can build complete, scalable products
+      from frontend to backend.
+    </p>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 bg-zinc-900 reveal">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+
+    <h2 class="text-5xl font-bold mb-6">Let’s work together</h2>
+
+    <p class="text-zinc-400 mb-8">
+      I’m open to internships, freelance work and collaboration.
+    </p>
+
+    <a href="mailto:your@email.com"
+       class="bg-emerald-500 text-black px-8 py-4 rounded-2xl font-semibold hover:bg-emerald-600">
+      Send Email
+    </a>
+
+  </div>
+</section>
+
+<footer class="py-10 text-center text-zinc-500 border-t border-zinc-800">
+  © 2026 Henry — Built with focus, not templates.
+</footer>
+
+<script>
+  // cursor glow
+  const glow = document.getElementById("cursor-glow");
+  document.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+  });
+
+  // scroll reveal
+  const reveals = document.querySelectorAll(".reveal");
+
+  window.addEventListener("scroll", () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
